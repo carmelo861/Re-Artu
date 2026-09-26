@@ -1,121 +1,294 @@
-/* Stile generale della pagina */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+/* Reset e Stile Base */
+* {
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Stile del Menu a Tendina */
-.menu {
-  position: relative;
-  margin-bottom: 20px;
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0f111a;
+  color: #e0e0e0;
+  line-height: 1.6;
 }
 
-.btn-menu {
-  background-color: #2c3e50;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
+h1, h2, h3, h4, .logo {
+  font-family: 'Cinzel', serif;
+  color: #f1c40f;
 }
 
-.tendina-nascosta {
-  display: none; /* Nasconde il menu */
-  position: absolute;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 5px;
+/* Navbar e Dropdown Menu */
+header {
+  background-color: rgba(15, 17, 26, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #d4af37;
+  padding: 1rem 2rem;
 }
 
-.tendina-nascosta a {
-  display: block;
-  padding: 10px 20px;
-  color: #333;
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
   text-decoration: none;
 }
 
-.tendina-nascosta a:hover {
-  background-color: #f0f0f0;
+.dropdown-menu {
+  position: relative;
 }
 
-/* Questa classe viene usata da JS per mostrare la tendina */
-.mostra {
+.dropdown-btn {
+  background: #d4af37;
+  color: #0f111a;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.dropdown-btn:hover {
+  background: #f1c40f;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #1a1d29;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #d4af37;
+  color: #0f111a;
+}
+
+.dropdown-content.show {
   display: block;
 }
 
-/* Intestazione e Contatore */
-header {
+/* Hero Section */
+.hero {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background-color: #34495e;
-  color: white;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 0 1rem;
 }
 
-.box-like {
-  margin-top: 15px;
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
-#btnLike {
-  padding: 8px 15px;
-  background-color: #e74c3c;
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Contatore Mi Piace */
+.like-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid #d4af37;
+}
+
+.like-btn {
+  background: #e74c3c;
   color: white;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#numeroLike {
+  padding: 8px 16px;
+  font-size: 0.9rem;
   font-weight: bold;
-  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
 }
 
-/* Sezioni di testo */
-section {
-  background-color: white;
-  padding: 15px 20px;
-  margin-top: 20px;
+.like-btn:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+.like-count {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Layout Contenuti */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #d4af37;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Grid per Card */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #1a1d2e;
+  border: 1px solid #2a2e45;
   border-radius: 8px;
-  border: 1px solid #ddd;
+  padding: 1.5rem;
+  transition: transform 0.3s, border-color 0.3s;
 }
 
-/* FAQ */
-.domanda {
-  background-color: #eee;
-  border: none;
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #d4af37;
+}
+
+.card h3, .card h4 {
+  margin-bottom: 0.8rem;
+}
+
+/* Curiosità */
+.curiosity-list {
+  list-style: none;
+  background: #1a1d2e;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #d4af37;
+}
+
+.curiosity-list li {
+  margin-bottom: 1rem;
+}
+
+/* FAQ Accordion */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.faq-item {
+  background: #1a1d2e;
+  border: 1px solid #2a2e45;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.faq-question {
   width: 100%;
-  text-align: left;
-  padding: 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.risposta {
-  display: none; /* Nasconde la risposta */
-  padding: 10px;
-  background-color: #fafafa;
-}
-
-.box-domanda {
-  margin-top: 20px;
-  padding-top: 10px;
-  border-top: 1px solid #eee;
-}
-
-input {
-  padding: 8px;
-  width: 60%;
-}
-
-#btnInvia {
-  padding: 8px 15px;
-  background-color: #27ae60;
-  color: white;
+  padding: 1rem;
+  background: none;
   border: none;
+  color: #f1c40f;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s;
+  background: #121420;
+}
+
+.faq-answer p {
+  padding: 0 1rem 1rem 1rem;
+  color: #ccc;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 150px;
+}
+
+/* Form Nuove Domande */
+.add-faq-form {
+  background: #1a1d2e;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-faq-form input {
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #2a2e45;
+  background: #0f111a;
+  color: white;
+}
+
+.add-faq-form button {
+  padding: 0.8rem;
+  background: #d4af37;
+  color: #0f111a;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-faq-form button:hover {
+  background: #f1c40f;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #08090e;
+  border-top: 1px solid #2a2e45;
+  font-size: 0.9rem;
 }
