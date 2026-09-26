@@ -2,75 +2,143 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Re Artù</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Re Artù - La Leggenda di Camelot</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Font epico da Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Menu con pulsante a tendina -->
-  <nav class="menu">
-    <button id="btnMenu" class="btn-menu">📜 Menu ▾</button>
-    <div id="tendina" class="tendina-nascosta">
-      <a href="#storia">Storia</a>
-      <a href="#curiosita">Curiosità</a>
-      <a href="#film">Film</a>
-      <a href="#faq">FAQ</a>
-    </div>
-  </nav>
-  <!-- Titolo e Contatore Mi Piace -->
+
+  <!-- Navbar con Menu a Tendina / Dropdown -->
   <header>
-    <h1>La Leggenda di Re Artù</h1>
-    <p>Un breve viaggio tra cavalieri e maghi</p>
-    
-    <div class="box-like">
-      <button id="btnLike">❤️ Mi Piace</button>
-      <span id="numeroLike">0</span>
+    <div class="navbar">
+      <a href="#" class="logo">👑 Re Artù</a>
+      
+      <!-- Menu a Tendina -->
+      <nav class="dropdown-menu">
+        <button class="dropdown-btn" id="menuToggle">Menu Sezioni ▾</button>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="#storia">La Storia</a>
+          <a href="#curiosita">Curiosità</a>
+          <a href="#cinema">Film e Media</a>
+          <a href="#faq">FAQ Interattive</a>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <!-- Sezione 1: Storia -->
-  <section id="storia">
-    <h2>La Storia</h2>
-    <p>Re Artù è un leggendario re britannico. La sua storia parla di una spada magica estratta da una roccia, del regno di Camelot e dei Cavalieri della Tavola Rotonda.</p>
-  </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>La Leggenda di Re Artù</h1>
+      <p>Tra storia, mito, la Spada nella Roccia e i Cavalieri della Tavola Rotonda.</p>
 
-  <!-- Sezione 2: Curiosità -->
-  <section id="curiosita">
-    <h2>Curiosità</h2>
-    <ul>
-      <li><strong>Mago Merlino:</strong> Era il saggio consigliere di Artù.</li>
-      <li><strong>Excalibur:</strong> La potente spada donata ad Artù dalla Dama del Lago.</li>
-      <li><strong>La Tavola Rotonda:</strong> Una tavola circolare fatta per far sentire tutti i cavalieri uguali.</li>
-    </ul>
-  </section>
-
-  <!-- Sezione 3: Film -->
-  <section id="film">
-    <h2>Film Famosi</h2>
-    <p>Ecco alcuni film dedicati a Re Artù:</p>
-    <ul>
-      <li>La spada nella roccia (Disney)</li>
-      <li>Excalibur</li>
-      <li>King Arthur</li>
-    </ul>
-  </section>
-
-  <!-- Sezione 4: FAQ (Domande e Risposte) -->
-  <section id="faq">
-    <h2>Domande Frequenti (FAQ)</h2>
-    
-    <div class="faq-item">
-      <button class="domanda">Re Artù è esistito davvero? (clicca per leggere)</button>
-      <p class="risposta">Non lo sappiamo con certezza. Forse era un vero guerriero del passato, ma molte sue storie sono inventate.</p>
-    </div>
-
-    <!-- Form per fare nuove domande -->
-    <div class="box-domanda">
-      <h3>Fai la tua domanda:</h3>
-      <input type="text" id="nuovaDomanda" placeholder="Scrivi la domanda qui...">
-      <button id="btnInvia">Invia</button>
-      <p id="messaggioConferma"></p>
+      <!-- Contatore Mi Piace -->
+      <div class="like-container">
+        <button id="likeBtn" class="like-btn">❤️ Mi Piace</button>
+        <span id="likeCount" class="like-count">0</span>
+      </div>
     </div>
   </section>
+
+  <main class="container">
+
+    <!-- Sezione Storia -->
+    <section id="storia" class="section">
+      <h2 class="section-title">La Storia e il Mito</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>La Spada nella Roccia</h3>
+          <p>La leggenda narra che solo il vero re di Bretagna sarebbe stato in grado di estrarre la spada incastonata nella roccia. Il giovane Artù compì l'impresa ignaro del suo destino divino.</p>
+        </article>
+
+        <article class="card">
+          <h3>Excalibur e la Dama del Lago</h3>
+          <p>Oltre alla spada estratta dalla roccia, la tradizione parla di Excalibur, la spada magica donata ad Artù dalla misteriosa Dama del Lago, simbolo di potere e protezione spirituale.</p>
+        </article>
+
+        <article class="card">
+          <h3>La Tavola Rotonda</h3>
+          <p>Creata per evitare rivalità tra i cavalieri, la Tavola Rotonda simboleggiava l'uguaglianza. Nessun cavaliere sedeva in posizione d'onore rispetto agli altri.</p>
+        </article>
+
+        <article class="card">
+          <h3>Mago Merlino e Camelot</h3>
+          <p>Merlino, il potente incantatore e consigliere, guidò Artù fin dall'infanzia, aiutandolo ad edificare il glorioso regno di Camelot, baluardo di giustizia.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sezione Curiosità -->
+    <section id="curiosita" class="section">
+      <h2 class="section-title">Curiosità Storiche e Leggende</h2>
+      <ul class="curiosity-list">
+        <li><strong>Artù è esistito davvero?</strong> Gli storici ritengono che la figura di Artù si basi su un leader militare romano-britannico del V-VI secolo che difese la Bretagna dalle invasioni sassoni.</li>
+        <li><strong>Il Sacro Graal:</strong> La ricerca della coppa dell'Ultima Cena divenne l'impresa suprema per i Cavalieri della Tavola Rotonda, in particolare per Sir Galahad.</li>
+        <li><strong>Avalon:</strong> L'isola leggendaria dove Artù fu condotto per guarire dalle ferite riportate nella battaglia di Camlann, in attesa di ritornare un giorno.</li>
+      </ul>
+    </section>
+
+    <!-- Sezione Film e Media -->
+    <section id="cinema" class="section">
+      <h2 class="section-title">Cinema, Serie TV e Cultura Pop</h2>
+      <div class="grid">
+        <div class="card media-card">
+          <h4>La spada nella roccia (1963)</h4>
+          <p>Il capolavoro animato di Walt Disney incentrato sull'infanzia di Artù (chiamato Semola) e l'addestramento con Merlino.</p>
+        </div>
+        <div class="card media-card">
+          <h4>Excalibur (1981)</h4>
+          <p>Il film diretto da John Boorman, considerata una delle trasposizioni cinematografiche più fedeli ed evocative della materia arturiana.</p>
+        </div>
+        <div class="card media-card">
+          <h4>Merlin (2008-2012)</h4>
+          <p>Famosa serie TV targata BBC che esplora la giovinezza di Merlino e il suo rapporto d'amicizia segreto con il principe Artù.</p>
+        </div>
+        <div class="card media-card">
+          <h4>King Arthur - Il potere della spada (2017)</h4>
+          <p>Rivisitazione dinamica e moderna della leggenda diretta dal regista Guy Ritchie, con Charlie Hunnam.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione FAQ Interattive -->
+    <section id="faq" class="section">
+      <h2 class="section-title">F.A.Q. Interattive</h2>
+      
+      <div class="faq-container" id="faqList">
+        <div class="faq-item">
+          <button class="faq-question">Chi ha tradito Re Artù? <span>+</span></button>
+          <div class="faq-answer">
+            <p>Il tradimento più celebre fu quello di suo nipote (o figlio) Mordred nella battaglia di Camlann, e l'amore segreto tra Ginevra e Sir Lancillotto.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Dove si trova la vera Camelot? <span>+</span></button>
+          <div class="faq-answer">
+            <p>Non esiste una collocazione storica certa. Tra i luoghi più accreditati vi sono il Castello di Cadbury nel Somerset e la città di Tintagel in Cornovaglia.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form per aggiungere nuove domande -->
+      <div class="add-faq-form">
+        <h3>Hai una domanda sulla leggenda?</h3>
+        <input type="text" id="userQuestion" placeholder="Scrivi qui la tua domanda...">
+        <button id="submitQuestionBtn">Invia Domanda</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Il Regno di Camelot - Progetto dedicato alla Leggenda di Re Artù</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
