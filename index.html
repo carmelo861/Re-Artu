@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Re Artù</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Menu con pulsante a tendina -->
+  <nav class="menu">
+    <button id="btnMenu" class="btn-menu">📜 Menu ▾</button>
+    <div id="tendina" class="tendina-nascosta">
+      <a href="#storia">Storia</a>
+      <a href="#curiosita">Curiosità</a>
+      <a href="#film">Film</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </nav>
+  <!-- Titolo e Contatore Mi Piace -->
+  <header>
+    <h1>La Leggenda di Re Artù</h1>
+    <p>Un breve viaggio tra cavalieri e maghi</p>
+    
+    <div class="box-like">
+      <button id="btnLike">❤️ Mi Piace</button>
+      <span id="numeroLike">0</span>
+    </div>
+  </header>
+
+  <!-- Sezione 1: Storia -->
+  <section id="storia">
+    <h2>La Storia</h2>
+    <p>Re Artù è un leggendario re britannico. La sua storia parla di una spada magica estratta da una roccia, del regno di Camelot e dei Cavalieri della Tavola Rotonda.</p>
+  </section>
+
+  <!-- Sezione 2: Curiosità -->
+  <section id="curiosita">
+    <h2>Curiosità</h2>
+    <ul>
+      <li><strong>Mago Merlino:</strong> Era il saggio consigliere di Artù.</li>
+      <li><strong>Excalibur:</strong> La potente spada donata ad Artù dalla Dama del Lago.</li>
+      <li><strong>La Tavola Rotonda:</strong> Una tavola circolare fatta per far sentire tutti i cavalieri uguali.</li>
+    </ul>
+  </section>
+
+  <!-- Sezione 3: Film -->
+  <section id="film">
+    <h2>Film Famosi</h2>
+    <p>Ecco alcuni film dedicati a Re Artù:</p>
+    <ul>
+      <li>La spada nella roccia (Disney)</li>
+      <li>Excalibur</li>
+      <li>King Arthur</li>
+    </ul>
+  </section>
+
+  <!-- Sezione 4: FAQ (Domande e Risposte) -->
+  <section id="faq">
+    <h2>Domande Frequenti (FAQ)</h2>
+    
+    <div class="faq-item">
+      <button class="domanda">Re Artù è esistito davvero? (clicca per leggere)</button>
+      <p class="risposta">Non lo sappiamo con certezza. Forse era un vero guerriero del passato, ma molte sue storie sono inventate.</p>
+    </div>
+
+    <!-- Form per fare nuove domande -->
+    <div class="box-domanda">
+      <h3>Fai la tua domanda:</h3>
+      <input type="text" id="nuovaDomanda" placeholder="Scrivi la domanda qui...">
+      <button id="btnInvia">Invia</button>
+      <p id="messaggioConferma"></p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
